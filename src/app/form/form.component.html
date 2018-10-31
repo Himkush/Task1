@@ -1,0 +1,163 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>Form</h2>
+    </div>
+    <div class="col-12 col-md-9 offset-sm-1">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="name" class="col-form-label">Post Name</label>
+          <input type="text"
+                 class="form-control"
+                 id="name"
+                 name="name"
+                 placeholder="Post Title/Name"
+                 formControlName="postName"
+          ><span *ngIf="!form.get('postName').valid && form.get('postName').touched" class="help-block">*Post Name is required</span>
+        </div>
+        <div class="col-md-6">
+          <label for="date" class="col-form-label">Post Date</label>
+          <input type="date"
+                 class="form-control"
+                 id="date"
+                 name="date"
+                 placeholder="Post Date"
+                 formControlName="postDate"
+          ><span *ngIf="!form.get('postDate').valid && form.get('postDate').touched" class="help-block">* Post Date is required</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="udate" class="col-form-label">Updated date</label>
+          <input type="date"
+                 class="form-control"
+                 id="udate"
+                 name="udate"
+                 placeholder="Updated Date"
+                 formControlName="postUpdate"
+          ><span *ngIf="!form.get('postUpdate').valid && form.get('postUpdate').touched" class="help-block">*Updated Date is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="descrip" class="col-form-label">Details</label>
+          <textarea type="text"
+                    class="form-control"
+                    id="descrip"
+                    name="descrip"
+                    placeholder="Description "
+                    formControlName="description"
+          ></textarea><span *ngIf="!form.get('description').valid && form.get('description').touched" class="help-block">* Details are required</span>
+        </div>
+        <div class="form-group row" formGroupName="impDates">
+        <div class="col-md-4">
+          <label for="applicationBegin" class="col-form-label">Application Begin </label>
+          <input type="date"
+                 class="form-control"
+                 id="applicationBegin"
+                 name="applicationBegin"
+                 placeholder="Application Begin Date"
+                 formControlName="applicationBegin"
+          ><span *ngIf="!form.get('impDates.applicationBegin').valid && form.get('impDates.applicationBegin').touched" class="help-block">* Post Date is required</span>
+        </div>
+          <div class="col-md-4">
+          <label for="lastDate" class="col-form-label">Last date</label>
+          <input type="date"
+                 class="form-control"
+                 id="lastDate"
+                 name="lastDate"
+                 placeholder="Last Date"
+                 formControlName="lastDate"
+          ><span *ngIf="!form.get('impDates.lastDate').valid && form.get('impDates.lastDate').touched" class="help-block">*Date is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="examFees" class="col-form-label">Exam Fees last Date </label>
+          <input type="date"
+                    class="form-control"
+                    id="examFees"
+                    name="examFees"
+                    placeholder="Exam Fees last Date"
+                    formControlName="lastDateExamFees"
+          ><span *ngIf="!form.get('impDates.lastDateExamFees').valid && form.get('impDates.lastDateExamFees').touched" class="help-block">*Date is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="answerKey" class="col-form-label">Answer Key Date </label>
+          <input type="date"
+                 class="form-control"
+                 id="answerKey"
+                 name="examFees"
+                 placeholder="Exam Fees last Date"
+                 formControlName="answerKey"
+          ><span *ngIf="!form.get('impDates.answerKey').valid && form.get('impDates.answerKey').touched" class="help-block">* Date is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="resultDeclare" class="col-form-label">Result Date </label>
+          <input type="date"
+                 class="form-control"
+                 id="resultDeclare"
+                 name="examFees"
+                 placeholder="Exam Fees last Date"
+                 formControlName="resultDeclare"
+          ><span *ngIf="!form.get('impDates.resultDeclare').valid && form.get('impDates.resultDeclare').touched" class="help-block">* Date is required</span>
+        </div>
+      </div>
+      </div>
+      <div class="form-group row" formGroupName="fees">
+        <div class="col-md-4">
+          <label for="general" class="col-form-label">General Fees </label>
+          <input type="number"
+                    class="form-control"
+                    id="general"
+                    name="general"
+                    placeholder="General Fees"
+                    formControlName="general"
+          ><span *ngIf="!form.get('fees.general').valid && form.get('fees.general').touched" class="help-block">* Fees is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="obc" class="col-form-label">OBC Fees </label>
+          <input type="number"
+                 class="form-control"
+                 id="obc"
+                 name="obc"
+                 placeholder="OBC Fees"
+                 formControlName="obc"
+          ><span *ngIf="!form.get('fees.obc').valid && form.get('fees.obc').touched" class="help-block">* Fees is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="sc" class="col-form-label">SC/ST Fees </label>
+          <input type="number"
+                 class="form-control"
+                 id="sc"
+                 name="obc"
+                 placeholder="SC/ST Fees"
+                 formControlName="sc"
+          ><span *ngIf="!form.get('fees.sc').valid && form.get('fees.sc').touched" class="help-block">* Fees is required</span>
+        </div>
+        <div class="col-md-4">
+          <label for="description" class="col-form-label">Details</label>
+          <textarea type="text"
+                 class="form-control"
+                 id="description"
+                 name="description"
+                 placeholder="Details"
+                 formControlName="description"
+          ></textarea><span *ngIf="!form.get('fees.description').valid && form.get('fees.description').touched" class="help-block">* Details are required</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="vacancyDetails" class="col-form-label">Vacancies Details</label>
+          <input type="number"
+                 class="form-control"
+                 id="vacancyDetails"
+                 name="vacancyDetails"
+                 placeholder="Vacancies Details"
+                 formControlName="vacancyDetails"
+          ><span *ngIf="!form.get('vacancyDetails').valid && form.get('vacancyDetails').touched" class="help-block">*Vacancies are required</span>
+        </div>
+      </div>
+      <button class="btn btn-danger" type="submit">Submit</button>
+    </form>
+      <button class="btn btn-primary" type="button" (click)="onGet()">Get</button>
+</div>
+</div>
+</div>
