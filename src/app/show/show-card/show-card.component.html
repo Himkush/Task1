@@ -2,26 +2,29 @@
   <div class="card ">
     <div class="card-header">
       <h2>{{post.postName}}</h2>
-      <h3>Post Date: {{post.postDate}}</h3>
+      <h3>Post Date: {{post.postDate| date: mediumDate}}</h3>
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <h5 class="card-title">Post Update Date: {{post.postUpdate}}</h5>
+          <h5 class="card-title">Post Update Date: {{post.postUpdate | date: mediumDate}}</h5>
         </div>
         <div class="col-md-8">
           <h5 class="pull-right">Post Description: {{post.description}}</h5>
+        </div>
+        <div class="col-md-8">
+          <h5 class="pull-right" *ngIf="post.qualification !== undefined">Qualification Eligibility: {{post.qualification}}</h5>
         </div>
       </div>
       <hr>
       <div class="row">
         <div class="col-md-6">
           <h3 class="card-title">Post Important Date: </h3>
-          <h5>Application Begin: {{post.impDates.applicationBegin}}</h5>
-          <h5>Last Date:{{post.impDates.lastDate}}</h5>
-          <h5>Exam Fees Last Date: {{post.impDates.lastDateExamFees}}</h5>
-          <h5>Answer Key: {{post.impDates.answerKey}}</h5>
-          <h5>Result Declare: {{post.impDates.resultDeclare}}</h5>
+          <h5>Application Begin: {{post.impDates.applicationBegin| date: mediumDate}}</h5>
+          <h5>Last Date: {{post.impDates.lastDate| date: mediumDate}}</h5>
+          <h5>Exam Fees Last Date: {{post.impDates.lastDateExamFees| date: mediumDate}}</h5>
+          <h5>Answer Key: {{post.impDates.answerKeyDate| date: mediumDate}}</h5>
+          <h5>Result Declare: {{post.impDates.resultDeclareDate| date: mediumDate}}</h5>
         </div>
         <hr>
         <div class="col-md-6">

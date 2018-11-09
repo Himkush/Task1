@@ -11,6 +11,8 @@ import { ShowCardComponent } from './show/show-card/show-card.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ShowService} from './show/show.service ';
 import { HeaderComponent } from './header/header.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatAutocompleteModule, MatButtonModule, MatDatepickerModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,13 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatButtonModule
   ],
   providers: [DataStorageService, ShowService],
   bootstrap: [AppComponent]
